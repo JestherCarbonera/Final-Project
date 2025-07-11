@@ -13,7 +13,7 @@ st.write("Upload an image of an **Elephant, Buffalo, Rhino, or Zebra** to classi
 # === LOAD MODEL ===
 @st.cache_resource
 def load_cnn_model():
-    return load_model("Model.h5")
+    return load_model("Model.keras")
 
 model = load_cnn_model()
 
