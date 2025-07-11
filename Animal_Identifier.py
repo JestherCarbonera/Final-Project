@@ -5,7 +5,7 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 import os
 
-st.set_page_config(page_title="Animal Classifier", layout="centered")
+st.set_page_config(page_title="🐾 Animal Classifier", layout="centered")
 st.title("Animal Image Classifier")
 st.write("Upload an image of an **Elephant, Buffalo, Rhino, or Zebra** to classify it using a trained CNN model.")
 
@@ -35,5 +35,5 @@ if uploaded_file is not None:
     confidence = np.max(prediction) * 100
 
     # Show result
-    st.markdown(f"###Prediction: `{predicted_class}`")
+    st.markdown(f"### ✅ Prediction: `{predicted_class}`")
     st.markdown(f"**Confidence:** {confidence:.2f}%")
