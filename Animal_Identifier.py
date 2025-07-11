@@ -35,5 +35,5 @@ if uploaded_file is not None:
     confidence = np.max(prediction) * 100
 
     # Show result
-    st.markdown(f"###Prediction: `{predicted_class}`")
+    st.markdown(f" Prediction: `{predicted_class}`")
     st.markdown(f"**Confidence:** {confidence:.2f}%")
