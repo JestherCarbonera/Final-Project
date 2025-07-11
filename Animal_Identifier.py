@@ -5,22 +5,18 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 import os
 
-# === CONFIG ===
 st.set_page_config(page_title="Animal Classifier", layout="centered")
-st.title("🐾 Animal Image Classifier")
+st.title("Animal Image Classifier")
 st.write("Upload an image of an **Elephant, Buffalo, Rhino, or Zebra** to classify it using a trained CNN model.")
 
-# === LOAD MODEL ===
 @st.cache_resource
 def load_cnn_model():
     return load_model("Model.keras")
 
 model = load_cnn_model()
 
-# === CLASS LABELS ===
-class_names = ['Buffalo', 'Elephant', 'Rhino', 'Zebra']  # Same order used during training
+class_names = ['Buffalo', 'Elephant', 'Rhino', 'Zebra']
 
-# === IMAGE UPLOAD ===
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
@@ -39,5 +35,5 @@ if uploaded_file is not None:
     confidence = np.max(prediction) * 100
 
     # Show result
-    st.markdown(f"### ✅ Prediction: `{predicted_class}`")
+    st.markdown(f"###Prediction: `{predicted_class}`")
     st.markdown(f"**Confidence:** {confidence:.2f}%")
